@@ -1,0 +1,367 @@
+			<div id="divGrande" ng-controller="AppCtrl as appCtrl">
+
+			<!--
+			md-cols number Number of columns in the grid.
+
+			md-row-height string One of
+			CSS length - Fixed height rows (eg. 8px or 1rem)
+			{width}:{height} - Ratio of width to height (eg. md-row-height="16:9")
+			"fit" - Height will be determined by subdividing the available height by the number of rows
+
+			md-gutter (optional) string The amount of space between tiles in CSS units (default 1px)
+
+			md-on-layout (optional) expression Expression to evaluate after layout. Event object is available as $event, and contains performance information.
+
+		-->
+
+
+		<div layout="column" style="height:500px;">
+
+						<div  id="menu" layout="row"><!---->
+						<div style="width: 80%;">
+						<ng-barra-direccion contenedor="{{cosaMedio.arrayJson}}"></ng-barra-direccion>
+						</div>
+
+<div layout="row" style="z-index:1;background-color:white;">
+				<div id="iconoCambioVista">
+				<ng-md-icon icon="apps" style="fill: #7D7D7D" size="40" ng-click="cambiarVista()" ng-if="cosaMedio.vistaSeleccionada == 'grid'"></ng-md-icon>
+				<ng-md-icon icon="list" style="fill: #7D7D7D" size="40" ng-click="cambiarVista()" ng-if="cosaMedio.vistaSeleccionada == 'list'"></ng-md-icon>
+				</div>
+			<!-- </md-button> -->
+
+
+			<ng-md-icon icon="folder" style="fill: #7D7D7D" size="40" ng-click="nuevaCarpeta()"></ng-md-icon>
+			<ng-md-icon icon="file_upload" style="fill: #7D7D7D" size="40" ng-file-select ng-file-change="subirArchivo($files)"></ng-md-icon>
+			<!--
+			      <md-button class="md-fab md-primary" aria-label="Use Android" ng-click="cambiarVista()">
+			        <md-icon></md-icon>
+			      </md-button>
+			  -->
+
+			        <md-button class="md-icon-button" aria-label="More" ng-click="toggleLeft()">
+				       <!-- <ng-md-icon src="images/icons/iconito.svg" style="fill: #7D7D7D" size="30"></ng-md-icon>  -->
+				       <md-icon md-svg-src="images/icons/iconito.svg" class="s24" style="fill: #7D7D7D"></md-icon>
+				       <!-- <img src="images/icons/iconito.svg" size="20"></div> -->
+				      </md-button>
+
+				    <md-button class="md-icon-button" aria-label="More" ng-click="toggleRight()">
+				       <ng-md-icon icon="rotate_left" style="fill: #7D7D7D" size="30"></ng-md-icon>
+				    </md-button>
+
+
+				   <!--  <md-button class="md-icon-button" aria-label="More" ng-click="toggleRight()">
+				       <ng-md-icon icon="person_add" style="fill: #7D7D7D" size="30"></ng-md-icon>
+				    </md-button> -->
+
+			<!-- <ng-md-icon icon="chevron_left" style="fill: #7D7D7D" size="40" ng-click="volverAtras()"></ng-md-icon> -->
+			</div>
+	</div>
+
+			<section layout="row" flex>
+				<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" id="panelIzquierdo"><!--md-is-locked-open="$mdMedia('gt-md')"-->
+			<!--       <md-toolbar class="md-theme-indigo">
+			        <h1 class="md-toolbar-tools">Sidenav Left</h1>
+			      </md-toolbar>
+			      <md-content class="md-padding" >
+			        <md-button ng-click="close()" class="md-primary" hide-gt-md>
+			          Close Sidenav Left
+			        </md-button>
+			        <p hide-md show-gt-md>
+			          This sidenav is locked open on your device. To go back to the default behavior,
+			          narrow your display.
+			        </p>
+			    </md-content> -->
+<!-- 			    ID: {{SelectedDoc.id}}<br>
+			    Nombre:{{SelectedDoc.nombre}}<br>
+			    Tipo: {{SelectedDoc.tipo}}<br>
+			    {{SelectedDoc}} -->
+<div id="contenedorGiganteIzquierda">
+			<div id="botonNuevo" aria-label="Nuevo" translate>MSG_NUEVO</div>
+<br>
+<br>
+<br>
+<br>
+
+ <md-tabs md-dynamic-height md-border-bottom md-selected="indiceGeneral">
+
+
+ 	<!-- 			<div
+				    data-angular-treeview="true"
+				    data-tree-id="arbol2"
+				    data-tree-model="treedata2"
+				    data-node-id="id"
+				    data-node-label="label"
+				    data-node-children="children"
+				    arbol-nro="1" >
+				</div>
+ -->
+  	<md-tab label="{{'MSG_PERSONAL' | translate}}">
+		<div class="contenedorArbolitos">
+				<br>
+			    <div
+				    data-angular-treeview="true"
+				    data-tree-id="arbol1"
+				    data-tree-model="treedata"
+				    data-node-id="id"
+				    data-node-label="label"
+				    data-node-children="children"
+				    arbol-nro="0" 
+				    dbl-click="false">
+				</div>
+		</div>
+	</md-tab>
+	<md-tab label="{{'MSG_INSTITUCIONAL' | translate}}">
+		<div class="contenedorArbolitos">
+				<br>
+				<div
+				    data-angular-treeview="true"
+				    data-tree-id="arbol2"
+				    data-tree-model="treedata2"
+				    data-node-id="id"
+				    data-node-label="label"
+				    data-node-children="children"
+				    arbol-nro="1" 
+				    dbl-click="false">
+				</div>
+		</div>
+	</md-tab>
+</md-tabs> 
+
+
+<div layout="column" id="contenedorBotoneraIzquierda">
+<div layout="row" style="
+    padding-left: 20%;
+">
+<ng-md-icon icon="query_builder" style="fill: #7D7D7D" size="20" ></ng-md-icon>
+				<div class="opcionMenuIzquierda" translate>
+					  MSG_RECIENTE</div></div>
+					  <div layout="row" style="
+    padding-left: 20%;
+">
+					  <ng-md-icon icon="star" style="fill: #7D7D7D" size="20" ></ng-md-icon>
+				<div class="opcionMenuIzquierda" translate>
+
+					  MSG_DESTACADO</div></div>
+<div layout="row" style="
+    padding-left: 20%;
+">
+	<ng-md-icon icon="delete" style="fill: #d14836" size="20" ></ng-md-icon>
+				<div class="opcionMenuIzquierda" id="botoncitoPapelera" translate>
+				MSG_PAPELERA</div></div>
+
+</div>
+
+</div>
+
+			</md-sidenav>
+<div id="mascaraOscura" style="display:none;background-color:black;top:0;left:0;height:100%;width:100%;z-index:999;position:absolute;  opacity: .6;">		
+</div>
+
+<md-content flex class="md-padding" id="pantallaCentral" when-scroll-ends="cargarPruebas()">
+<div id="contenedorCosaDelMedio">
+<ng-cosa-del-medio ng-cloak></ng-cosa-del-medio>
+</div>
+</md-content>
+
+<md-sidenav class="md-sidenav-right md-whiteframe-z2" md-component-id="right" id="panelDerecho"><!---->
+<md-content class="md-padding">
+<!-- {{nodoSeleccionado}} -->
+      
+</md-content>
+<!-- {{currentNode}} -->
+</md-sidenav>
+
+</section>
+
+</div>
+
+
+
+
+<!--LA FUNCION DEL NG-CLICK SE PUEDE CAMBIAR POR LA QUE VA DE VERDAD EN VEZ DE IR A LA FUNCION SWITCH-->
+<!-- <div id="ClickMenu" style="display:none; z-index:999; position:absolute; background:white;">
+	<ul id="opcionesMenu">
+		<li ng-click="opcionMenu('opcion1')">
+			<div class="divDibujoMenu">
+			<ng-md-icon icon="apps" style="fill: #7D7D7D" size="20" ></ng-md-icon>
+			</div>
+			<div class="opcionMenu">Opcion 1</div>
+		</li>
+		<li ng-click="opcionMenu('opcion2')">
+			<div class="divDibujoMenu">
+			<ng-md-icon icon="apps" style="fill: #7D7D7D" size="20" ></ng-md-icon></div>
+			<div class="opcionMenu">Opcion 2</div>
+		</li>
+		<li ng-click="opcionMenu('opcion3')">
+			<div class="divDibujoMenu">
+			<ng-md-icon icon="apps" style="fill: #7D7D7D" size="20" ></ng-md-icon></div>
+			<div class="opcionMenu">Opcion 3</div>
+		</li>
+		<li ng-click="opcionMenu('Eliminar')">
+			<div class="divDibujoMenu">
+			<ng-md-icon icon="delete" style="fill: #7D7D7D" size="20" ></ng-md-icon></div>
+			<div class="opcionMenu">Eliminar</div>
+		</li>
+		<li ng-click="opcionMenu('Renombrar')">
+		<div class="divDibujoMenu">
+			<div class="opcionMenu">Cambiar nombre</div></div>
+		</li>
+	</ul>
+</div> -->
+<!-- <div id="ClickMenu" style="display:none;z-index:999; position:absolute; background:red;top:50;left:50;width:50px;height:50px;">
+	<ul id="opcionesMenu">
+		<li ng-click="opcionMenu('opcion1')">
+			<div class="divDibujoMenu">
+			<ng-md-icon icon="apps" style="fill: #7D7D7D" size="20" ></ng-md-icon>
+			</div>
+			<div class="opcionMenu">Opcion 1</div>
+		</li>
+	</ul>
+<div>
+ -->
+<div  id="ClickMenu" layout="column" style="display:none; z-index:999; position:absolute; background:white;">
+	<ul  id="opcionesMenu" ng-repeat="opcion in funcionesContextMenu">
+		<li ng-click="opcionMenu('{{opcion.funcion}}')"><!-- ng-click="opcionMenu('{{opcion.funcion}}')" ng-click="alert()"-->
+			<div class="opcionMenu">{{opcion.nombre}}</div>
+		</li>
+	</ul>
+</div>
+ 
+<!--DIV DE CAMBIO DE NOMBRE-->
+<div id="divCambioNombre" class="divGrandeVentanita">
+	<div style="float:right;">
+		<ng-md-icon icon="clear" style="fill: #7D7D7D" ng-click="botonVentanaCambiarNombre('cancelar')"></ng-md-icon>
+	</div>
+	<div id="divContenedorCambioNombre" class="divMedioVentanita">
+		<b>{{'MSG_CAMBIAR_NOMBRE' | translate}}</b>
+
+		<md-input-container>
+      	<label>{{'MSG_AYUDA_CAMBIO_NOMBRE' | translate}}</label>
+      	<input ng-model="nuevoNombre">
+    	</md-input-container>
+
+
+		<div layout="row" style="width:100%;">
+			<div class="contenedorBotonCambioNombre">
+				<md-button class="md-raised" id="botonAceptarCambioNombre" ng-click="botonVentanaCambiarNombre('aceptar')">{{'BTN_ACEPT' | translate}}</md-button>
+			</div>
+			<div class="contenedorBotonCambioNombre">
+				<md-button class="md-raised" id="botonCancelarCambioNombre" ng-click="botonVentanaCambiarNombre('cancelar')">{{'BTN_CANCEL' | translate}}</md-button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--DIV DE CARPETA NUEVA-->
+<div id="divCarpetaNueva" class="divGrandeVentanita">
+	<div style="float:right;">
+		<ng-md-icon icon="clear" style="fill: #7D7D7D" ng-click="botonVentanaCarpetaNueva('cancelar')"></ng-md-icon>
+	</div>
+	<div id="divContenedorCarpetaNueva" class="divMedioVentanita">
+		<b>{{'MSG_NUEVA_CARPETA' | translate}}</b>
+
+		<md-input-container>
+      	<label>{{'MSG_NUEVA_CARPETA' | translate}}</label>
+      	<input ng-model="cosaMedio.nuevoNombre">
+    	</md-input-container>
+
+
+		<div layout="row" style="width:100%;">
+			<div class="contenedorBotonCambioNombre">
+				<md-button class="md-raised" id="botonAceptarCarpetaNueva" ng-click="botonVentanaCarpetaNueva('aceptar')">{{'BTN_ACEPT' | translate}}</md-button>
+			</div>
+			<div class="contenedorBotonCambioNombre">
+				<md-button class="md-raised" id="botonCancelarCarpetaNueva" ng-click="botonVentanaCarpetaNueva('cancelar')">{{'BTN_CANCEL' | translate}}</md-button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- DIV OBTENER ENLACE DE DESCARGA -->
+<div id="divObtenerEnlace" class="divGrandeVentanita">
+	<div style="float:right;">
+		<ng-md-icon icon="clear" style="fill: #7D7D7D" ng-click="botonVentanaObtenerEnlace('cancelar')"></ng-md-icon>
+	</div>
+	<div id="divContenedorObtenerEnlace" class="divMedioVentanita">
+		<md-input-container>
+	      	<label>{{'MSG_ENLACE' | translate}}</label>
+	      	<input ng-model="SelectedDoc.path" readonly>
+    	</md-input-container>
+	</div>
+</div>
+
+
+<!-- DIV MOVER ELEMENTO -->
+<div id="divMoverElemento" class="divGrandeVentanita">
+
+	<div style="float:right;">
+		<ng-md-icon icon="clear" style="fill: #7D7D7D" ng-click="botonVentanaMoverElemento('cancelar')"></ng-md-icon>
+	</div>
+	<div id="divContenedorMoverElemento" class="divMedioVentanita">
+	
+		<b>{{'MSG_COPIAR' | translate}}</b>
+		<br>
+
+		<ng-md-icon icon="chevron_left" style="fill: #7D7D7D;
+  float: right;" size="20" ng-click="subirNivelMovedor()"></ng-md-icon>
+
+	<md-select ng-model="selectMovedor" style="z-index:9999;" placeholder="Personal">
+    	<md-option  style="z-index:9999;" ng-value="1">{{'MSG_PERSONAL' | translate}}</md-option>
+    	<md-option style="z-index:9999;" ng-value="2">{{'MSG_INSTITUCIONAL' | translate}}</md-option>
+  	</md-select>
+		<div id="contenedorArbolitoMovedor" >
+			<div>
+			<!-- 		data-angular-treeview="true"
+				    data-tree-id="arbol3"
+				    data-tree-model="treedata"
+				    data-node-id="id"
+				    data-node-label="label"
+				    data-node-children="children"
+				    arbol-nro="0"
+				    dbl-click="true"> -->
+
+				    <div ng-if="selectMovedor==1" ng-repeat="folder in arrayMovedor" class="carpetasMovedoras" ng-class="{'seleccionMovedora':$index == carpetaSelecciondaMovedora}" ng-dblclick="abrirCarpetaMovedora(folder)" ng-click="seleccionarMovedor($index)">{{folder.label}}</div>
+
+				    <div ng-if="selectMovedor==2" ng-repeat="folder in arrayMovedor2" class="carpetasMovedoras" ng-class="{'seleccionMovedora':$index == carpetaSelecciondaMovedora}" ng-dblclick="abrirCarpetaMovedora(folder)" ng-click="seleccionarMovedor($index)">{{folder.label}}</div>
+				
+			</div>
+		</div>
+
+
+		<div layout="row" style="width:100%;">
+			<div class="contenedorBotonCambioNombre">
+				<md-button class="md-raised" id="botonAceptarMoverElemento" ng-click="botonVentanaMoverElemento('aceptar')">{{'BTN_ACEPT' | translate}}</md-button>
+			</div>
+			<div class="contenedorBotonCambioNombre">
+				<md-button class="md-raised" id="botonCancelarMoverElemento" ng-click="botonVentanaMoverElemento('cancelar')">{{'BTN_CANCEL' | translate}}</md-button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- DIV COMPARTIR -->
+<div id="divCompartirElemento" class="divGrandeVentanita">
+
+	<div style="float:right;">
+		<ng-md-icon icon="clear" style="fill: #7D7D7D" ng-click="botonVentanaMoverElemento('cancelar')"></ng-md-icon>
+	</div>
+	<div id="divContenedorCompartirElemento" class="divMedioVentanita">
+		<b>{{'MSG_MOVER' | translate}}</b>
+
+		<div id="contenedorVentanitaCompartidora">
+		</div>
+
+
+		<div layout="row" style="width:100%;">
+			<div class="contenedorBotonCambioNombre">
+				<md-button class="md-raised" id="botonAceptarCompartirElemento" ng-click="botonVentanaMoverElemento('aceptar')">{{'BTN_ACEPT' | translate}}</md-button>
+			</div>
+			<div class="contenedorBotonCambioNombre">
+				<md-button class="md-raised" id="botonCancelarCompartirElemento" ng-click="botonVentanaMoverElemento('cancelar')">{{'BTN_CANCEL' | translate}}</md-button>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>

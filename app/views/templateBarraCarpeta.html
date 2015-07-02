@@ -1,0 +1,34 @@
+<div id="contenedorMayorBarra" style="width: 90%;">
+<div id="contenedorPath" style="display:flex;" layout="row"><!-- layout="row" -->
+
+	<div flex layout="row" class="barraDireccion"> <!--class="ejemplos" flex ng-class="{'divPedazoPathInicial':$first, 'divPedazoPath':$middle, 'divPedazoPathFinal':$last}"-->
+			<div ng-show="barraDireccion.arrayCarpetas.length > 1" layout="row">
+				<div><!-- style="padding-top:7px;z-index:999;margin-left:2px;height: 30px;float:left;" -->
+					<ng-md-icon icon="chevron_right" style="fill: #7D7D7D;background-color: white;" size="20">
+	 				</ng-md-icon>
+	 			</div>
+	 			<div  ng-click="irACarpeta(barraDireccion.arrayCarpetas[barraDireccion.arrayCarpetas.length-2])" class="divNivelSuperior"  ><!--flex  ng-mouseenter="mostrarMas($event)" ng-mouseleave="acomodarComoAntes($event)" -->
+					{{barraDireccion.arrayCarpetas[barraDireccion.arrayCarpetas.length-2].nombre}}
+				</div>
+ 			</div>
+
+ 			<!-- <div style="width:2px;padding-left:1px;padding-right:1px;"></div> -->
+ 				<!--style="padding-left:20px"-->
+
+
+				<div layout="row">
+					<ng-md-icon icon="chevron_right" style="fill: #7D7D7D;background-color: white;" size="20">
+	 				</ng-md-icon>
+
+					<div ng-show="barraDireccion.arrayCarpetas.length"   ng-click="irACarpeta(unaCarpeta)">
+						{{barraDireccion.arrayCarpetas[barraDireccion.arrayCarpetas.length-1].nombre}}
+					</div> 
+				</div>
+
+				
+
+	</div>
+
+
+</div>
+</div>

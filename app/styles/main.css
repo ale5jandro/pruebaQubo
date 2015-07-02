@@ -1,0 +1,456 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    /*max-width: 730px;*/
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+.gray{
+  /*background: green;  */
+}
+
+.selected{
+  background: rgba(92, 90, 190, 0.7);
+  border: 2px solid blue;
+}
+
+.selected svg{
+    fill:white;
+}
+
+.hidden{
+  display: none;
+}
+
+#panelIzquierdo{
+  position: inherit;
+  background-color: rgba(238, 238, 238, 1);
+}
+
+#panelDerecho{
+  position: inherit;
+/*  -webkit-transform: translate3d(0%, 0, 0);
+  transform: translate3d(0%, 0, 0);*/
+}
+
+
+
+/*NEGRADA*/
+.md-sidenav-backdrop{
+  display: none;
+}
+
+#ClickMenu li:hover{
+  background-color: rgb(231, 227, 227);
+  /*text-decoration: underline;*/
+  cursor: pointer;
+}
+
+#ClickMenu ul{
+  list-style-type: none;
+  cursor:hand;
+}
+
+#ClickMenu{
+  box-shadow: 0 0 20px 0 rgba(0,0,0,.2);
+}
+
+.md-sidenav-right.md-closed {
+  -webkit-transform: translate3d(0%, 0, 0);
+  transform: translate3d(0%, 0, 0);
+}
+
+.md-sidenav-right {
+  left: 100%;
+  top: 0;
+  -webkit-transform: translate3d(-0%, 0, 0);
+  transform: translate3d(-0%, 0, 0);
+}
+
+#pantallaCentral{
+  background-color: #EEE;
+}
+
+#menu{
+  background-color: #FAFAFA;
+  border: 1px solid #E5E5E5;
+  -webkit-box-shadow: 0px 3px 3px 0px rgba(142, 142, 142, 0.75);
+  -moz-box-shadow:    0px 3px 3px 0px rgba(142, 142, 142, 0.75);
+  box-shadow:         0px 3px 3px 0px rgba(142, 142, 142, 0.75);
+  width: 100%;
+  z-index: 1;
+}
+
+#vistaLista{
+  background-color: #EEE;
+}
+
+.opcionMenu{
+    padding-top: 2px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#opcionesMenu{
+    padding-left: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    /*margin-left: 5px;*/
+}
+
+#opcionesMenu li{
+  display: -webkit-box;
+}
+
+.divDibujoMenu{
+    padding-top: 5px;
+
+}
+
+.divPedazoPath{
+    padding-top: 10px;
+    overflow: hidden;
+    height: 30px;
+    text-overflow: ellipsis;
+     min-width: 17.547px;
+     padding-left: 14px;
+     padding-right: 4px;
+     white-space: nowrap;
+     background-color: white;
+     margin-right: 5px;
+     /*float:left;*/
+}
+
+ng-barra-direccion{
+    width: 65%;
+}
+
+.divPedazoPath:hover{
+  border: 1px solid #BDBDBD;
+  cursor: pointer;
+  /*width:100px;*/
+  overflow: hidden;
+  padding-right: 4px;
+
+}
+
+.divPedazoPathInicial{
+    padding-top: 10px;
+    display: table;
+}
+
+.divPedazoPathInicial:hover{
+  border: 1px solid #BDBDBD;
+  cursor: pointer;
+}
+
+.divPedazoPathFinal{
+    padding-top: 10px;
+    padding-left: 10px;
+    /*position: absolute;*/
+    white-space: nowrap;
+    background-color: white;
+    /*word-wrap: break-word;*/
+    /*display: table;*/
+/*    padding-right: 40%;
+    padding-left: 10px;*/
+}
+
+.divPedazoPathFinal:hover{
+  border: 1px solid #BDBDBD;
+  cursor: pointer;
+  /*word-wrap: break-word;*/
+ 
+/*  padding-right: 40%;
+  padding-left: 10px;*/
+}
+
+.divGrandeVentanita{
+  left: 436px;
+  opacity: 1;
+  left: 40%;
+  position: absolute;
+  display:none;
+  background: white;
+  border: 1px solid #A6A6A6;
+  z-index: 999;
+}
+
+.divMedioVentanita{
+  padding: 20px;
+}
+
+#inputTextCambioNombre{
+  width: 100%;
+}
+
+.contenedorBotonCambioNombre{
+  margin: 5px;
+}
+
+#botonAceptarCambioNombre{
+  color:white;
+  background: #4B8DF9;
+}
+
+#botonCancelarCambioNombre{
+  color: #444;
+  background: #F2F2F2;
+}
+
+#contenedorArbolitoMovedor{
+  width: 210px;
+  border: 1px solid;
+  height: 200px;
+  position: absolute;
+  overflow: auto;
+}
+
+#botonAceptarMoverElemento{
+  color:white;
+  background: #4B8DF9;
+  top: 200px;
+}
+
+#botonCancelarMoverElemento{
+  color: #444;
+  background: #F2F2F2;
+  top: 200px;
+}
+
+#circulitoCargador{
+  left: 50%;
+}
+
+.ejemplos{
+  /*display: flex;*/
+  width:100%;
+  min-width:0;
+  background-color: white;
+}
+
+.divPedazoPath span{
+  padding-right: 20px;
+}
+
+.divNivelSuperior{
+  cursor: pointer;
+}
+
+.divNivelSuperior:hover{
+  border: 1px solid #BDBDBD;
+  cursor: pointer;
+  overflow: hidden;
+  padding-right: 4px;
+}
+
+.barraDireccion{
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.opcionMenuIzquierda{
+
+            
+          padding: 1px 1px 1px 0;
+            
+          border: none;
+            
+          cursor: pointer;
+            
+          height: 28px;
+            
+          font-size: 13px;
+            
+          border: solid transparent;
+            
+          border-width: 0 0 0 4px;
+}
+
+#botoncitoPapelera{
+  color: rgba(209, 72, 54, 1);
+}
+
+ng-cosa-del-medio{
+  position: static;
+}
+
+#contenedorCosaDelMedio{
+  position: absolute;
+  width: 95%;
+}
+
+#botonNuevo{
+  width:114px;
+  height:100;
+  display:inline-block;
+  border: 1px solid transparent;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1);
+  text-transform: uppercase;  box-shadow: none;
+  background-color: #d14836;
+  background-image: -webkit-linear-gradient(top,#dd4b39,#d14836);  border-radius: 2px;
+  cursor: default;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  margin-right: 16px;
+  height: 27px;
+  line-height: 27px;
+  min-width: 54px;
+  outline: 0;  font-family: Roboto,sans-serif;  
+  -webkit-font-smoothing: antialiased; 
+  margin-left: 40px;
+  margin-top:20px;
+  position: absolute;
+
+}
+
+.contenedorArbolitos{
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@-moz-document url-prefix() { 
+  #contenedorGiganteIzquierda{
+    position:absolute;
+    width:285px;
+  }
+}
+
+#contenedorBotoneraIzquierda{
+  position:absolute;
+  margin-left:40px;
+}
+
+#divContenedorMoverElemento{
+  height: 345px;
+}
+
+.seleccionMovedora{
+  background-color: rgba(168, 168, 168, .6);
+}
+
+.carpetasMovedoras{
+  padding-right: 24px;
+  display: block;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.md-select-menu-container{
+  z-index:9999;
+}
+
+.gray.ng-enter {
+  transition:5.5s linear all;
+  opacity:0;
+}
+
+.gray.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+md-tab-label{
+  display: inherit;
+}
+
+.crucesitaCerradorPestanas{
+  z-index:20;
+  color:rgb(160, 7, 7);
+  border-radius: 90px;
+  height: 15px;
+  width: 15px;
+}
+
+.crucesitaCerradorPestanas:hover{
+  background-color: rgb(255, 58, 58);;
+  color:white;
+}
+
+#botonAceptarCarpetaNueva{
+  color: white;
+  background: #4B8DF9;
+}

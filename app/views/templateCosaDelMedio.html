@@ -1,0 +1,79 @@
+
+
+<!--<md-progress-linear md-mode="indeterminate" ng-show="cargando"></md-progress-linear>-->
+<md-progress-circular class="md-warn" md-mode="indeterminate" ng-show="cargando" id="circulitoCargador" layout-align="center"></md-progress-circular>
+
+			<div layout="column" layout-fill layout-align="top center" ng-show="!cargando" ng-file-drop ng-model="fileUpoad">
+
+<!-- <div id="pestañas" layout="row">
+<div ng-repeat="prueba in arrayPruebas track by $index" style="border:1px solid; margin-right:3px;cursor:pointer;" ng-click="cambioPestana(prueba)">
+	{{prueba.nombre}}
+</div>
+</div> -->
+
+   <md-tabs md-border-bottom md-selected="indiceArray1" ng-show="pestanaGeneralSeleccionada==0"><!-- No puede ser ng-if porque me separa los scopes -->
+   	
+      <md-tab ng-repeat="tab in pestana1.pestanas track by $index" 
+               ><div>{{tab.nombre}}&nbsp;</div>  <div class="crucesitaCerradorPestanas" ng-click="cerrarTab(tab);">×</div>
+              </md-tab>
+    
+   </md-tabs>
+
+ <md-tabs md-border-bottom md-selected="indiceArray2" ng-show="pestanaGeneralSeleccionada==1"><!-- No puede ser ng-if porque me separa los scopes -->
+      <md-tab ng-repeat="tab in pestana2.pestanas track by $index" 
+              ><div>{{tab.nombre}}&nbsp;</div>  <div class="crucesitaCerradorPestanas" ng-click="cerrarTab(tab);">×</div></md-tab>
+</md-tabs>
+  
+
+	<!--div q contiene la vista en grilla-->
+	<div  ng-if="cosaMedio.vistaSeleccionada == 'grid'"> <!-- ng-class="{'hidden':cosaMedio.vistaSeleccionada != 'grid'}" -->
+		<md-grid-list
+		md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+		md-row-height-gt-md="1:1" md-row-height="2:2"
+		md-gutter="12x" md-gutter-gt-sm="8px" >
+		<div ng-repeat="json in cosaMedio.arrayJson" >    <!--contextmenu-container="meta.contextmenu"-->
+			
+			<md-grid-tile class="gray" id="{{json.id}}"
+			md-rowspan="1" md-colspan="1" ng-click="seleccionar(json,$event)" ng-dblclick="clickDoble(json)" ng-right-click="{{json}}" 
+			ng-class="{'esCarpeta':json.tipo == 'carpeta'}"><!-- data-context-menu="templateContext.html" context-menu="templateContext.html"    contextmenu-item="row"--> 
+			
+			<img ng-show="json.tipo!='carpeta'" src="{{json.pathImg}}"/>
+			<ng-md-icon ng-show="json.tipo=='carpeta'" class="iconitoRepresentativo" icon="folder_shared" style="fill: #7D7D7D" size="80"></ng-md-icon>
+			<md-grid-tile-footer class="footerDoc" ng-class="{'selected':json.id == SelectedDoc.id}">
+			<h3>{{json.nombre}}</h3>
+		</md-grid-tile-footer>
+	</md-grid-tile>
+</div>
+</md-grid-list>
+</div>
+
+<!--div q contiene la vista en lista-->
+<div ng-if="cosaMedio.vistaSeleccionada == 'list'" ><!-- ng-class="{'hidden':cosaMedio.vistaSeleccionada != 'list'}" -->
+	<md-content id="vistaLista">
+	<md-list>
+	<md-item ng-repeat="json in cosaMedio.arrayJson">
+	<md-item-content class="gray" ng-mousedown="alert()" ng-click="seleccionar(json,$event)" ng-class="{'selected':json.id == SelectedDoc.id,'esCarpeta':json.tipo == 'carpeta'}" ng-right-click="{{json}}" 
+	ng-dblclick="clickDoble(json)"  id="{{json.id}}">
+	<div class="md-tile-left">
+		<img ng-show="json.tipo!='carpeta'" ng-src="{{json.pathImg}}" class="face" alt="{{json.id}}">
+		<ng-md-icon class="iconitoRepresentativo" ng-show="json.tipo=='carpeta'" icon="folder_shared" style="fill: #7D7D7D" size="80"></ng-md-icon>
+	</div>
+	<div class="md-tile-content">
+		<h3>{{json.nombre}}</h3>
+		<h4>{{json.tipo}}</h4>
+			            <!--<p>
+			              {{item.notes}}
+			          </p>-->
+			      </div>
+			  </md-item-content>
+			</md-item>
+		</md-list>
+	</md-content>
+</div>
+
+</div>
+
+
+
+
+

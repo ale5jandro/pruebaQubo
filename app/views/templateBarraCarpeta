@@ -1,0 +1,5 @@
+<div id="ejemplos" ng-repeat="unaCarpeta in arrayCarpetas"> 
+	<div>
+		{{unaCarpeta}}
+	</div> 
+</div>

@@ -1,0 +1,46 @@
+{
+	"routes": {
+		"templateUrl": "app/index.html",
+		"files": ["app/styles/main.css"],
+		"children": [
+			{
+				"url": "/",
+				"name": "main",
+				"title": "Main",
+				"templateUrl": "app/views/main.html",
+				"controller": "MainCtrl",
+				"files": ["app/scripts/controllers/main.js"],
+				"public": true,
+				"sidenav": "default"
+			},
+			{
+				"url": "/qubo",
+				"name": "qubo",
+				"title": "Qubo DM",
+				"templateUrl": "app/views/divgrande.html",
+				"controller": "AppCtrl",
+				"files": ["bower_components/angular-route/angular-route.js","app/scripts/controllers/divgrande.js","bower_components/ng-file-upload/ng-file-upload-shim.min.js",
+				"bower_components/ng-file-upload/ng-file-upload.min.js",
+				"//code.jquery.com/ui/1.11.4/jquery-ui.js","bower_components/angular-upload/angular-upload.js" ],
+				"public": true, 
+				"sidenav": true
+			},
+			{
+				"url": "/quboPrueba",
+				"name": "quboPrueba",
+				"title": "QuboPrueba DM",
+				"templateUrl": "app/views/divgrande.html",
+				"controller": "AppCtrl",
+				"files": ["bower_components/angular-route/angular-route.js","app/scripts/controllers/divgrande.js","bower_components/ng-file-upload/ng-file-upload-shim.min.js",
+				"bower_components/ng-file-upload/ng-file-upload.min.js","bower_components/angular-translate/angular-translate.js","bower_components/angular-translate-loader-url/angular-translate-loader-url.js","bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js","//code.jquery.com/ui/1.11.4/jquery-ui.js","bower_components/angular-upload/angular-upload.js" ],
+				"public": true, 
+				"sidenav": true
+			}
+		]
+	},
+	"modFilePath": "app/scripts/app.js",
+	"title": "Mara",
+	"description": "Sistema de Gestión de Procesos y Documentos Digitales",
+	"image": "app/images/yeoman.png"
+}
+

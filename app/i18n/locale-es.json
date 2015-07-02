@@ -1,0 +1,23 @@
+{
+	"BTN_CANCEL": "Cancelar",
+	"BTN_ACEPT": "Aceptar",
+	"MSG_NUEVO": "Nuevo",
+	"MSG_PERSONAL": "Personal", 
+	"MSG_INSTITUCIONAL": "Institucional",
+	"MSG_RECIENTE": "Reciente", 
+	"MSG_DESTACADO": "Destacado", 
+	"MSG_PAPELERA": "Papelera", 
+	"MSG_NUEVA_CARPETA": "Nueva Carpeta", 
+	"MSG_CAMBIAR_NOMBRE": "Cambiar Nombre",
+	"MSG_AYUDA_CAMBIO_NOMBRE": "Escribe un nombre nuevo para el elemento:",
+	"MSG_ENLACE": "Enlace al documento",
+	"MSG_COPIAR": "Copiar a",
+	"MSG_MOVER": "Mover a", 
+	"MSG_ABRIR_PESTANA": "Abrir en nueva pestaña",
+	"MSG_BORRAR": "Borrar",
+	"MSG_RENOMBRAR": "Cambiar nombre",
+	"MSG_DESCARGAR": "Descargar",
+	"MSG_COPIAR_PUNTITOS": "Copiar a...",
+	"MSG_HACER_COPIA": "Hacer copia"
+
+}
